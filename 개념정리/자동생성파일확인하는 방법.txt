@@ -1,0 +1,1 @@
+org.springfamework.boot:spring-boot-autoconfigure:x.x.x/h2
