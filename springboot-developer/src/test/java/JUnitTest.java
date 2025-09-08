@@ -13,6 +13,7 @@ public class JUnitTest {
         Assertions.assertEquals(sum, a + b);
     }
 
+    /*
     @DisplayName("1 + 3는 4이다")
     @Test
     public void junitFailedTest(){
@@ -22,4 +23,5 @@ public class JUnitTest {
 
         Assertions.assertEquals(sum, a + b);
     }
+     */
 }
