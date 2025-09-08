@@ -10,7 +10,7 @@ public class TestService {
     @Autowired
     MemberRepository memberRepository;
 
-    public List<Member> getAllmember() {
+    public List<Member> getAllMembers() {
         return memberRepository.findAll();
     }
 }
