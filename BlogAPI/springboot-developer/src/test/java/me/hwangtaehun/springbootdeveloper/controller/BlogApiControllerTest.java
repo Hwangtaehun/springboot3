@@ -167,7 +167,7 @@ class BlogApiControllerTest {
 
         // when
         ResultActions result = mockMvc.perform(put(url, savedArticle.getId())
-                .content(MediaType.APPLICATION_JSON_VALUE)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(objectMapper.writeValueAsString(request)));
 
         // then
