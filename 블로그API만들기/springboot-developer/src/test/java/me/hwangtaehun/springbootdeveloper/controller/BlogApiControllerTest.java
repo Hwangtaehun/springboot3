@@ -1,6 +1,7 @@
 package me.hwangtaehun.springbootdeveloper.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import me.hwangtaehun.springbootdeveloper.domain.Article;
 import me.hwangtaehun.springbootdeveloper.dto.AddArticleRequest;
 import me.hwangtaehun.springbootdeveloper.repository.BlogRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,8 +17,12 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -55,8 +60,17 @@ class BlogApiControllerTest {
 
         //when
         //설정한 내용을 바탕으로 요청 전송
-        ResultActions result = mockMvc.perform(post(url))
+        ResultActions result = mockMvc.perform(post(url)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content(requestBody);
+                .content(requestBody));
+
+        //then
+        result.andExpect(status().isCreated());
+
+        List<Article> articles = blogRepository.findAll();
+
+        assertThat(articles.size()).isEqualTo(1);
+        assertThat(articles.get(0).getTitle()).isEqualTo(title);
+        assertThat(articles.get(0).getContent()).isEqualTo(content);
     }
 }
