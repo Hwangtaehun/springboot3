@@ -1,7 +1,9 @@
 package me.hwangtaehun.springbootdeveloper.dto;
 
+import lombok.Getter;
 import me.hwangtaehun.springbootdeveloper.domain.Article;
 
+@Getter
 public class ArticleResponse {
     private final String title;
     private final String content;
