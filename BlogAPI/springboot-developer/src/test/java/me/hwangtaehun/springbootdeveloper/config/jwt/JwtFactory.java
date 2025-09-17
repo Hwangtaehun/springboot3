@@ -3,7 +3,8 @@ package me.hwangtaehun.springbootdeveloper.config.jwt;
 import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
 
 import java.time.Duration;
 import java.util.Date;
