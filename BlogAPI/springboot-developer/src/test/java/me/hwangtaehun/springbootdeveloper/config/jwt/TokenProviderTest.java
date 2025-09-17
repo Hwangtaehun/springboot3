@@ -1,8 +1,6 @@
-package me.hwangtaehun.springbootdeveloper.controller.config.jwt;
+package me.hwangtaehun.springbootdeveloper.config.jwt;
 
 import io.jsonwebtoken.Jwts;
-import me.hwangtaehun.springbootdeveloper.config.jwt.JwtProperties;
-import me.hwangtaehun.springbootdeveloper.config.jwt.TokenProvider;
 import me.hwangtaehun.springbootdeveloper.domain.User;
 import me.hwangtaehun.springbootdeveloper.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
